@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import './App.css'
-import Countries from './components/countries/Countries'
+import Countries from './components/Countries/Countries'
 
 
 const countriesPromise = fetch('https://restcountries.com/v3.1/all')
@@ -12,8 +12,9 @@ function App() {
 
   return (
     <>
-    <Suspense fallback={<h3>Nadir bhai going.....</h3>}>
-      <Countries countriesPromise={countriesPromise}></Countries>
+    <Suspense fallback={<h1>Loading...</h1>}>
+
+      <Countries countriesPromise = {countriesPromise}></Countries>
     </Suspense>
     </>
   )
